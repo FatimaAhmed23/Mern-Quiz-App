@@ -10,8 +10,8 @@ Create a mongodb database and add two collections "quiz_questions" and "users".
 
 Create a .env file on root location and set these two variables:
 
-TESTSYSTEM_DB_URI=<YourDatabaseUri>
-TESTSYSTEM_NS=<YourDatabaseName>
+TESTSYSTEM_DB_URI= 'YourDatabaseUri'
+TESTSYSTEM_NS= 'YourDatabaseName'
 
 ## Available Scripts
 
@@ -36,7 +36,7 @@ Your app is ready to be deployed!
 
 Shift this build folder to the root directory to serve react files using nodejs
 
-### Seeding the database
+## Seeding the database
 
 Add this code snippet to index.js (The exact location is commented inside the file)
 
