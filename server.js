@@ -15,8 +15,11 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/system/", test);
+app.use("/system/",
+passport.authenticate("jwt", { session: false }), test);
+
 app.use("/user/", user);
+
 app.use(
   "/user/auth/",
   passport.authenticate("jwt", { session: false }),

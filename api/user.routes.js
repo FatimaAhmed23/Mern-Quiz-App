@@ -4,8 +4,9 @@ const passport = require("passport");
 const jwt = require("jsonwebtoken");
 let userController = require("./user.controller.js");
 
-router.route("/enterscore").post(userController.EnterScore)
-router.route("/getusers").get(userController.getUsers)
+router.route("/enterscore").post(passport.authenticate("jwt", { session: false }),userController.EnterScore)
+router.route("/getusers").get(passport.authenticate("jwt", { session: false }),userController.getUsers)
+
 
 router.post(
   "/signup",
