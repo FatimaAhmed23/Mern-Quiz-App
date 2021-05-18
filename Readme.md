@@ -4,7 +4,7 @@ This project is created using nodejs and mongodb on backend and react js on fron
 
 ## Create Database
 
-Create a mongodb database and add two collections "quiz_questions" and "users". 
+Create a mongodb database and add two collections `quiz_questions` and `users`. 
 
 ## Set Environment Variables
 
