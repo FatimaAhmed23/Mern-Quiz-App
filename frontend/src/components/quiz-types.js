@@ -5,16 +5,20 @@ import { useLocation } from "react-router-dom";
 
 const QuizTypes = (props) => {
   const queryvalue = new URLSearchParams(useLocation().search);
+
+  //set state variables
   const [types, getTypes] = useState([]);
   const [token, getToken] = useState(queryvalue.get("access_token"));
 
   const [user, setUser] = useState({});
 
+  // execute on render
   useEffect(() => {
     retrieveTypes();
     getProfile();
   }, []);
 
+  // get unique types of questions
   const retrieveTypes = () => {
     QuestionsDataService.getqtypes()
       .then((response) => {
@@ -25,6 +29,7 @@ const QuizTypes = (props) => {
       });
   };
 
+  // get profile information based on jwt
   const getProfile = () => {
     if (token) {
       UsersDataService.GetProfile(token)

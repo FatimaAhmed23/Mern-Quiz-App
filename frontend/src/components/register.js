@@ -6,6 +6,8 @@ import { Redirect } from "react-router-dom";
 
 function RegisterUser() {
   const alert = useAlert();
+
+  //set state variables
   const [userAuthenticated, getAuthentication] = useState(false);
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -13,6 +15,8 @@ function RegisterUser() {
       email: "",
     },
   });
+
+  //Register user
   const onSubmit = (data) => {
     UsersDataService.CheckRegister(data)
 
@@ -41,20 +45,6 @@ function RegisterUser() {
               </h5>
               <br></br>
               <form name="contactform" onSubmit={handleSubmit(onSubmit)}>
-                {/* <div className="form-group">
-                  <label>Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="name"
-                    placeholder="Enter your username"
-                    {...register("name")}
-                  ></input>
-                  <small
-                    id="emailHelp"
-                    className="form-text text-muted"
-                  ></small>
-                </div> */}
                 <br></br>
                 <div className="form-group">
                   <label>Email address</label>

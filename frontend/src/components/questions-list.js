@@ -4,17 +4,21 @@ import QuestionsDataService from "../services/questions";
 import { useLocation } from "react-router-dom";
 
 const QuestionsList = (props) => {
+
+  //set state variables
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState([]);
-
   const queryvalue = new URLSearchParams(useLocation().search);
+
+  // execute on render
   useEffect(() => {
     retrieveQuestions();
   }, []);
 
+  // get questions where type is equal to the type query parameter
   const retrieveQuestions = () => {
     QuestionsDataService.find(queryvalue.get("type"), "type")
       .then((response) => {
@@ -25,6 +29,7 @@ const QuestionsList = (props) => {
       });
   };
 
+  // Save answers in a state array on every answer selection to assign scores after submit
   const handleAnswerOptionClick = (currentQuestion, isCorrect, key) => {
     if (answers[currentQuestion] == null) {
       answers.splice(currentQuestion, 0, isCorrect);
@@ -33,6 +38,7 @@ const QuestionsList = (props) => {
     }
   };
 
+  // show next question in the array by array indexing
   const ShowNext = () => {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
@@ -40,6 +46,7 @@ const QuestionsList = (props) => {
     }
   };
 
+  //submit test scores of user
   const SubmitTest = () => {
     setScore(answers.filter((x) => x == true).length);
     UsersDataService.submitScore(
@@ -57,6 +64,7 @@ const QuestionsList = (props) => {
 
   let submitButton;
 
+  //show next and submit button based on question number
   if (currentQuestion == questions.length - 1) {
     submitButton = (
       <a className="btn btn-primary" onClick={() => SubmitTest()}>

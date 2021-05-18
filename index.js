@@ -31,13 +31,7 @@ MongoClient.connect(process.env.TESTSYSTEM_DB_URI, {
     await quizdao.injectDB(client);
     await usersdao.injectDB(client);
 
-    /* Seeding Quiz Question Collection
-    const collection = client.db(process.env.TESTSYSTEM_NS).collection(
-      "quiz_questions"
-    );
-    collection.drop();
-    collection.insertMany(seeddata);
-    */
+  /** Add Seeding snippet */
 
     app.listen(port, () => {
       console.log(`listening on port ${port}`);

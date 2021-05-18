@@ -1,3 +1,6 @@
+
+//Send get and post api requests to nodejs backend 
+
 import http from "../http-common";
 
 class QuestionsDataService {

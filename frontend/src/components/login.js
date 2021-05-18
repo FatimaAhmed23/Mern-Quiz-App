@@ -6,6 +6,8 @@ import { Redirect } from "react-router-dom";
 
 function Login() {
   const alert = useAlert();
+
+  //set state variables
   const [userAuthenticated, getAuthentication] = useState(false);
   const [token, getToken] = useState(false);
   const [userRole, getRole] = useState(null);
@@ -15,6 +17,8 @@ function Login() {
       email: "",
     },
   });
+
+  //Authenticate user using jwt and return user assigned token and user details
   const onSubmit = (data) => {
     UsersDataService.CheckLogin(data)
       .then((response) => {

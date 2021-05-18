@@ -17,7 +17,6 @@ const Header = (props) => {
 
   // get profile information and save in state variable
   const getProfile = () => {
-    getToken(queryvalue.get("access_token"))
     if (token) {
       UsersDataService.GetProfile(token)
         .then((response) => {
