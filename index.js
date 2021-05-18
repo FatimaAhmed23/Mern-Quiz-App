@@ -1,12 +1,12 @@
 const app = require("./server.js");
 const mongodb = require("mongodb");
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 const quizdao = require("./dao/quizDAO.js");
 const usersdao = require("./dao/usersDAO.js");
 const seeddata = require("./data.js");
 var mongoose = require("mongoose");
 
-dotenv.config();
+// dotenv.config();
 const MongoClient = mongodb.MongoClient;
 
 const port = process.env.PORT || 5000;
