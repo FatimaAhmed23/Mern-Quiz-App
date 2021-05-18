@@ -10,8 +10,8 @@ Create a mongodb database and add two collections "quiz_questions" and "users".
 
 Create a .env file on root location and set these two variables:
 
-### TESTSYSTEM_DB_URI = '<YourDatabaseUri>'
-### TESTSYSTEM_NS = '<YourDatabaseName>'
+### `TESTSYSTEM_DB_URI = 'YourDatabaseUri'`
+### `TESTSYSTEM_NS =  'YourDatabaseName'`
 
 ## Available Scripts
 
