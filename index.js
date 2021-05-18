@@ -9,7 +9,7 @@ var mongoose = require("mongoose");
 dotenv.config();
 const MongoClient = mongodb.MongoClient;
 
-const port = process.env.port || 8000;
+const port = process.env.port;
 
 mongoose.connect(process.env.TESTSYSTEM_DB_URI, {
   useNewUrlParser: true,
